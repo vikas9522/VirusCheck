@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malware Scanner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Foldit:wght@200&family=Rajdhani:wght@300;400&display=swap"
+        rel="stylesheet">
+
+    <style>
+        .logo {
+            font-size: xx-large;
+            color: #1f1f7c;
+            font-family: 'Rajdhani', sans-serif;
+            cursor: pointer;
+        }
+
+        img {
+            height: 50px;
+            width: 100px;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: 'Foldit', cursive;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        .main {
+            text-align: center;
+            font-family: 'Abel', sans-serif;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        #url {
+            margin: 50px;
+            padding: 10px;
+            padding-left: 50px;
+            width: 650px;
+            border: 2px solid midnightblue;
+            border-radius: 10px;
+            text-align: center;
+            height: 31px;
+            position: relative;
+            top: 60px;
+        }
+
+        #btn {
+            height: 0px;
+            background-color: white;
+            width: 7px;
+            font-size: 50px;
+            padding-left: 10px;
+            padding-top: 0px;
+            padding-bottom: 60px;
+            padding-right: 120px;
+            margin: 0px;
+            top: 100px;
+            position: relative;
+            border-radius: 10px;
+            cursor: pointer;
+            border: solid;
+            box-shadow: 0px 0px 2px 2px rgb(116, 134, 189);
+        }
+
+        #btn:hover {
+            box-shadow: 2px 2px 2px 2px rgb(116, 134, 189);
+        }
+
+        #file:hover {
+            background-color: rgba(50, 45, 105, 0.511);
+        }
+
+        #url_1:hover {
+            background-color: rgba(50, 45, 105, 0.511);
+        }
+
+        #file {
+            color: floralwhite;
+            padding-left: 50px;
+            padding-right: 50px;
+            font-size: larger;
+        }
+
+        #url_1 {
+            color: floralwhite;
+            padding-left: 50px;
+            padding-right: 50px;
+            font-size: larger;
+        }
+
+        .nav_bar {
+            background-color: rgb(13 1 15);
+            box-shadow: 0px 0px 2px 2px #103439;
+            padding: 14px 0px 15px 0px;
+        }
+
+        .nav_bar a {
+            color: black;
+            text-decoration: none;
+        }
+
+        .drop-zone {
+            margin: 20px;
+            max-width: 200px;
+            height: 200px;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            top: 65px;
+            position: relative;
+            font-weight: 500;
+            font-size: 20px;
+            cursor: pointer;
+            color: rgb(107 107 236);
+            border: 4px dashed #060a19;
+            border-radius: 10px;
+        }
+
+        /* input[type="file"] {
+            display: none;
+        } */
+
+        #url_1:hover {
+            background-color: rgba(208, 90, 90, 0.511);
+        }
+
+        #infoIcon {
+            width: 150px;
+            font-size: 21px;
+            height: 51px;
+            background: black;
+            border: 3px solid #35356d;
+            color: aquamarine;
+            border-radius: 10px;
+            cursor: pointer;
+            top: 90px;
+            position: relative;
+        }
+
+        #infoIcon:hover {
+            border: 3px solid blue;
+        }
+
+        .progress-bar {
+            width: 200px;
+            height: 20px;
+            background-color: #f2f2f2;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .progress-bar .progress {
+            height: 100%;
+            width: 0%;
+            background-color: #008000;
+            border-radius: 10px;
+        }
+
+        #fileToUpload{
+            top: 84px;
+    position: relative;
+    border: 2px solid darkslateblue;
+    background: rgb(0, 0, 0);
+    padding: 10px 0px 17px 15px;
+    margin: 0px 29px 0px 0px;
+    border-radius: 11px;
+    color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="logo">
+       <a href="index.html" style="text-decoration: none;">VirusCheck</a> 
+    </nav>
+    <div class="main">
+        <h1>Stay Secure</h1>
+        <p>Examine suspicious files, domains, IPs and URLs to distinguish malware
+            <br> and other breaches, consequently share them with
+            <br> the security community
+        </p>
+        <div class="nav_bar">
+            <nav>
+                <a href="a_file.html" id="file">FILE</a>
+                <a href="a_url.html" target="_self" id="url_1">URL</a>
+            </nav>
+
+        </div>
+      
+          
+         
+        </body>
+        </html>
+        
+        <center>
+            <div class="drop-zone" id="dropZone">
+                <span class="drop__prompt">Drag and drop your file here to upload</span>
+                <!-- <input type="file" hidden id="fileSelector"> -->
+            </div>
+            
+                <form action="file_upload.php" method="POST" enctype="multipart/form-data">
+            <input type="file" name="fileToUpload" id="fileToUpload">
+            <input type="submit" value="Upload" id="infoIcon" name="submit">
+            <!-- <button type="button" id="infoIcon">Choose File</button> -->
+            
+<div class="progress-bar">
+    <div class="progress"></div>
+    <div class="progress-percent">0%</div>
+</div>
+<div id="uploadedFileName"></div>
+
+    
+</center>
+</form>
+    </div>
+
+    <script>
+        // Get references to the drop zone, input field, and the button
+        const dropZone = document.getElementById('dropZone');
+        const fileSelector = document.getElementById('fileSelector');
+        const infoIcon = document.getElementById('infoIcon');
+        const progressBar = document.querySelector('.progress-bar');
+        const progress = document.querySelector('.progress');
+        const uploadedFileName = document.getElementById('uploadedFileName');
+
+        // Add event listeners to the drop zone
+        dropZone.addEventListener('dragover', handleDragOver);
+        dropZone.addEventListener('dragleave', handleDragLeave);
+        dropZone.addEventListener('drop', handleDrop);
+
+        // Add an event listener to the button
+        infoIcon.addEventListener('click', () => {
+            // Simulate a click on the input field
+            fileSelector.click();
+        });
+
+        fileSelector.addEventListener('change', function () {
+            const file = this.files[0];
+            uploadFile(file);
+        });
+
+        function handleDragOver(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            dropZone.classList.add('dragover');
+        }
+
+        function handleDragLeave(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            dropZone.classList.remove('dragover');
+        }
+
+        function handleDrop(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            dropZone.classList.remove('dragover');
+
+            const file = event.dataTransfer.files[0];
+            uploadFile(file);
+        }
+
+        function uploadFile(file) {
+            const xhr = new XMLHttpRequest();
+
+            xhr.upload.addEventListener('progress', function (event) {
+                if (event.lengthComputable) {
+                    const percentComplete = (event.loaded / event.total) * 100;
+                    // Update the progress bar width and text based on the upload progress
+                    progress.style.width = percentComplete + '%';
+                    progress.textContent = percentComplete.toFixed(2) + '%';
+                }
+            });
+
+            xhr.addEventListener('load', function () {
+                // File upload complete, hide the progress bar
+                progressBar.style.display = 'none';
+                // Change the text of the button to indicate successful file upload
+                infoIcon.textContent = 'File Uploaded Successfully';
+                progress.style.width = '100%';
+                progress.textContent = '100%';
+                console.log('File upload complete');
+            });
+
+            xhr.open('POST', 'your-upload-url', true);
+            xhr.send(file);
+
+            // Show the progress bar
+            progressBar.style.display = 'block';
+
+            // Show the uploaded file name
+            uploadedFileName.textContent = 'Uploaded File: ' + file.name;
+        }
+        
+    </script>
+</body>
+
+</html>

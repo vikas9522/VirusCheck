@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JSON Data</title>
+  <style>
+    *{
+      background-color: black;
+      color: aliceblue;
+      margin: auto;
+      
+    }
+    table {
+      border-collapse: collapse;
+      
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+    }
+
+    td{
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <table id="data-table">
+    <thead>
+      <tr>
+        <th>Antivirus Name</th>
+        <th>Engine Version</th>
+        <th>Result</th>
+        <th>Engine Update</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    fetch('test.json')
+      .then(response => response.json())
+      .then(data => {
+        const jsonData = data;
+
+        const dataTable = document.getElementById('data-table');
+
+        for (const engineName in jsonData.data.attributes.last_analysis_results) {
+          const result = jsonData.data.attributes.last_analysis_results[engineName];
+
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${result.engine_name}</td>
+            <td>${result.engine_version}</td>
+            <td>${result.result}</td>
+            <td>${result.engine_update}</td>
+          `;
+
+          dataTable.querySelector('tbody').appendChild(row);
+        }
+      })
+      .catch(error => {
+        console.log('Error:', error);
+      });
+  </script>
+</body>
+</html>
